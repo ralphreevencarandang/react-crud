@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import UpdateUser from './pages/UpdateUser'
 import CreateUser from './pages/CreateUser'
 import ViewUser from './pages/ViewUser'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             
           </Routes>
       </BrowserRouter>
+      <ToastContainer />
       
     </>
   );

@@ -34,25 +34,25 @@ const Home = () => {
                 </div>
                 {loading ? 
                 (<Spinner/>)  : 
-                    <table class="bg-white rounded-lg shadow w-full">
+                    <table className="bg-white rounded-lg shadow w-full">
                         <thead>
-                            <tr class="bg-gray-200 text-gray-700 text-left text-sm uppercase">
-                                <th class="px-4 py-2">ID</th>
-                                <th class="px-4 py-2">Username</th>
-                                <th class="px-4 py-2">Name</th>
-                                <th class="px-4 py-2">Email</th>
-                                <th class="px-4 py-2">Phone</th>
-                                <th class="px-4 py-2">Action</th>
+                            <tr className="bg-gray-200 text-gray-700 text-left text-sm uppercase">
+                                <th className="px-4 py-2">ID</th>
+                                <th className="px-4 py-2">Username</th>
+                                <th className="px-4 py-2">Name</th>
+                                <th className="px-4 py-2">Email</th>
+                                <th className="px-4 py-2">Phone</th>
+                                <th className="px-4 py-2">Action</th>
                             </tr>
                         </thead>
-                        <tbody class="text-gray-600 text-sm divide-y divide-gray-200">
+                        <tbody className="text-gray-600 text-sm divide-y divide-gray-200">
                             {data.map((d,i) => 
                             <tr key={i}>
-                                <td class="px-4 py-2">{d.id}</td>
-                                <td class="px-4 py-2">{d.username}</td>
-                                <td class="px-4 py-2">{d.name}</td>
-                                <td class="px-4 py-2">{d.email}</td>
-                                <td class="px-4 py-2">{d.phone}</td>
+                                <td className="px-4 py-2">{d.id}</td>
+                                <td className="px-4 py-2">{d.username}</td>
+                                <td className="px-4 py-2">{d.name}</td>
+                                <td className="px-4 py-2">{d.email}</td>
+                                <td className="px-4 py-2">{d.phone}</td>
                                 <td className="flex justify-center items-center gap-3 px-4 py-2">
                                     <Link className="bg-blue-300 text-white px-2 rounded-lg">View</Link>
                                     <Link className="bg-yellow-300 text-white px-2 rounded-lg">Edit</Link>
