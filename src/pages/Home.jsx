@@ -25,6 +25,20 @@ const Home = () => {
         }
     }
 
+    const hanldeDelete = async (id)=>{
+        const confirmDelete = confirm('Are you sure you want to delete this record? ');
+        if(confirmDelete) {
+            try{
+                const res = await axios.delete(`/users/${id}`);
+                console.log(res)
+            }catch(error){
+                console.log(error)
+                setErrorMessage(error.message);
+            }
+        }
+    }
+    
+
   return (
         <div className="flex flex-col justify-center items-center">
             <div className="max-w-[900px]">
@@ -33,7 +47,7 @@ const Home = () => {
                     <Link to='/create' className="border-1 px-2 py-1 rounded-lg border-slate-400 ">Add User</Link>
                 </div>
                 {loading ? 
-                (<Spinner/>)  : 
+                (<Spinner/>)  : (errorMessage ? <p>{errorMessage}</p> : 
                     <table className="bg-white rounded-lg shadow w-full">
                         <thead>
                             <tr className="bg-gray-200 text-gray-700 text-left text-sm uppercase">
@@ -56,19 +70,14 @@ const Home = () => {
                                 <td className="flex justify-center items-center gap-3 px-4 py-2">
                                     <Link to={`/view/${d.id}`} className="bg-blue-300 text-white px-2 rounded-lg">View</Link>
                                     <Link className="bg-yellow-300 text-white px-2 rounded-lg">Edit</Link>
-                                    <Link className="bg-red-300 text-white px-2 rounded-lg">Delete</Link>
+                                    <button className="bg-red-300 text-white px-2 rounded-lg" onClick={()=> hanldeDelete(d.id)}>Delete</button>
+                        
                                 </td>
                             </tr>
                             )}
                         </tbody>
                     </table>
-                
-                
-                }
-                
-
-
-
+                )}              
             </div>
         </div>
   );
