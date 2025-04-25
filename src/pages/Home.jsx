@@ -54,7 +54,7 @@ const Home = () => {
                                 <td className="px-4 py-2">{d.email}</td>
                                 <td className="px-4 py-2">{d.phone}</td>
                                 <td className="flex justify-center items-center gap-3 px-4 py-2">
-                                    <Link className="bg-blue-300 text-white px-2 rounded-lg">View</Link>
+                                    <Link to={`/view/${d.id}`} className="bg-blue-300 text-white px-2 rounded-lg">View</Link>
                                     <Link className="bg-yellow-300 text-white px-2 rounded-lg">Edit</Link>
                                     <Link className="bg-red-300 text-white px-2 rounded-lg">Delete</Link>
                                 </td>
